@@ -33,8 +33,8 @@ namespace NastGlass
             _hideApplication.Clicked += HideApplication;
             _closeApplication.Clicked += CloseApplication;
         }
-        
-        private void HideApplication(object sender, EventArgs e) => this.SkipTaskbarHint = true;
+
+        private void HideApplication(object sender, EventArgs e) => this.Hide();
         
         private void CloseApplication(object sender, EventArgs e) => Application.Quit();
 
@@ -62,7 +62,7 @@ namespace NastGlass
             
             if (string.IsNullOrEmpty(filePath))
             {
-                MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Close, "Select a file");
+                MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Close, "Select a file"){Decorated = false};
                 md.Run();
                 md.Dispose();
             }

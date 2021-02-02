@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using Gdk;
 using Gtk;
 
 namespace NastGlass
@@ -17,7 +16,7 @@ namespace NastGlass
             
             var win = new MainWindow();
 
-            string fileStyle = $"{Directory.GetCurrentDirectory()}/gtk.css";
+            string fileStyle = $"{Directory.GetCurrentDirectory()}/StylesWindows.css";
             
             if (File.Exists(fileStyle))
             {

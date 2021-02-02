@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Gdk;
 using Gtk;
 using UI = Gtk.Builder.ObjectAttribute;
 using Window = Gtk.Window;
@@ -14,6 +15,8 @@ namespace NastGlass
         [UI] private FileChooserButton _selected = null;
         [UI] private Button _getLink = null;
         [UI] private Button _openGit = null;
+        [UI] private Button _closeApplication = null;
+        [UI] private Button _hideApplication = null;
         [UI] private TextView _messange = null;
         [UI] private ProgressBar _progressBar = null;
         
@@ -27,7 +30,13 @@ namespace NastGlass
             
             _getLink.Clicked += GetLinkClicked;
             _openGit.Clicked += OpenGitClicked;
+            _hideApplication.Clicked += HideApplication;
+            _closeApplication.Clicked += CloseApplication;
         }
+        
+        private void HideApplication(object sender, EventArgs e) => this.SkipTaskbarHint = true;
+        
+        private void CloseApplication(object sender, EventArgs e) => Application.Quit();
 
         private void OpenGitClicked(object sender, EventArgs e)
         {

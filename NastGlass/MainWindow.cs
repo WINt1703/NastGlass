@@ -1,10 +1,8 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Gdk;
 using Gtk;
 using UI = Gtk.Builder.ObjectAttribute;
-using Window = Gtk.Window;
 
 namespace NastGlass
 {
@@ -27,13 +25,20 @@ namespace NastGlass
         private MainWindow(Builder builder) : base(builder.GetObject("MainWindow").Handle)
         {
             builder.Autoconnect(this);
-            
-            _getLink.Clicked += GetLinkClicked;
-            _openGit.Clicked += OpenGitClicked;
-            _hideApplication.Clicked += HideApplication;
-            _closeApplication.Clicked += CloseApplication;
+
+            this.ButtonPressEvent += MoveWindow;
+            this._openGit.Clicked += OpenGitClicked;
+            this._hideApplication.Clicked += HideApplication;
+            this._closeApplication.Clicked += CloseApplication;
+            this._getLink.Clicked += GetLinkClicked;
         }
 
+        private void MoveWindow(object o, ButtonPressEventArgs args)
+        {
+            var eventButton = args.Event;
+            this.BeginMoveDrag((int)eventButton.Button, (int)eventButton.XRoot, (int)eventButton.YRoot, eventButton.Time);
+        }
+        
         private void HideApplication(object sender, EventArgs e) => this.Hide();
         
         private void CloseApplication(object sender, EventArgs e) => Application.Quit();

@@ -17,16 +17,21 @@ namespace NastGlass
             var win = new MainWindow();
 
             string fileStyle = $"{Directory.GetCurrentDirectory()}/StylesWindows.css";
+
+            LoadCSSStyles(fileStyle, win);
             
+            win.Show();
+            Application.Run();
+        }
+        
+        private static void LoadCSSStyles(string fileStyle, Window win)
+        {
             if (File.Exists(fileStyle))
             {
                 CssProvider provider = new CssProvider();
                 provider.LoadFromPath(fileStyle);
                 StyleContext.AddProviderForScreen(win.Screen, provider, 800);
             }
-            
-            win.Show();
-            Application.Run();
         }
     }
 }

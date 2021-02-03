@@ -24,4 +24,11 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Icon.ico" />
+      <Content Include="Icon.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

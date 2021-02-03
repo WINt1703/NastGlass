@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Reflection;
 using Gtk;
 
 namespace NastGlass
@@ -17,8 +18,10 @@ namespace NastGlass
             var win = new MainWindow();
 
             string fileStyle = $"{Directory.GetCurrentDirectory()}/StylesWindows.css";
-
             LoadCSSStyles(fileStyle, win);
+            
+            var iconPath = $"{Directory.GetCurrentDirectory()}/Icon.ico";
+            win.SetIconFromFile(iconPath);
             
             win.Show();
             Application.Run();

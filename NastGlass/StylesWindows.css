@@ -86,8 +86,8 @@ button#hideApplication
 {
     border-radius: 100%;
     padding: 0;
-    min-width: 16px;
-    min-height: 16px;
+    min-width: 20px;
+    min-height: 20px;
     background: rgb(67, 66, 79);
 }
 
@@ -95,8 +95,8 @@ button#closeApplication
 {
     border-radius: 100%;
     padding: 0;
-    min-width: 16px;
-    min-height: 16px;
+    min-width: 20px;
+    min-height: 20px;
     background: rgb(67, 66, 79);
     margin-right: 7px;
 }

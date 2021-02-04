@@ -18,7 +18,7 @@ namespace NastGlass
             var win = new MainWindow();
 
             string fileStyle = $"{Directory.GetCurrentDirectory()}/StylesWindows.css";
-            LoadCSSStyles(fileStyle, win);
+            LoadCssStyles(fileStyle, win);
             
             var iconPath = $"{Directory.GetCurrentDirectory()}/Icon.ico";
             win.SetIconFromFile(iconPath);
@@ -27,7 +27,7 @@ namespace NastGlass
             Application.Run();
         }
         
-        private static void LoadCSSStyles(string fileStyle, Window win)
+        private static void LoadCssStyles(string fileStyle, Window win)
         {
             if (File.Exists(fileStyle))
             {

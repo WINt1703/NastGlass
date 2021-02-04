@@ -37,7 +37,9 @@ namespace NastGlass
         private void MoveWindow(object o, ButtonPressEventArgs args)
         {
             var eventButton = args.Event;
-            this.BeginMoveDrag((int)eventButton.Button, (int)eventButton.XRoot, (int)eventButton.YRoot, eventButton.Time);
+            
+            if(eventButton.Button == 1)
+                this.BeginMoveDrag((int)eventButton.Button, (int)eventButton.XRoot, (int)eventButton.YRoot, eventButton.Time);
         }
 
         private void HideApplication(object sender, EventArgs e) => this.Hide();

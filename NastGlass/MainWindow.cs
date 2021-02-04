@@ -26,8 +26,8 @@ namespace NastGlass
         private MainWindow(Builder builder) : base(builder.GetObject("MainWindow").Handle)
         {
             builder.Autoconnect(this);
-
-            _titleBar.ButtonPressEvent += MoveWindow;
+            
+            this._titleBar.ButtonPressEvent += MoveWindow;
             this._openGit.Clicked += OpenGitClicked;
             this._hideApplication.Clicked += HideApplication;
             this._closeApplication.Clicked += CloseApplication;
@@ -39,7 +39,7 @@ namespace NastGlass
             var eventButton = args.Event;
             this.BeginMoveDrag((int)eventButton.Button, (int)eventButton.XRoot, (int)eventButton.YRoot, eventButton.Time);
         }
-        
+
         private void HideApplication(object sender, EventArgs e) => this.Hide();
         
         private void CloseApplication(object sender, EventArgs e) => Application.Quit();

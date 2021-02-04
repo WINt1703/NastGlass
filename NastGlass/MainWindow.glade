@@ -23,8 +23,12 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkBox">
+                <property name="width_request">8</property>
+                <property name="height_request">8</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="margin_top">10</property>
+                <property name="margin_bottom">10</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
@@ -42,6 +46,7 @@
                   <object class="GtkButton" id="_closeApplication">
                     <property name="name">closeApplication</property>
                     <property name="visible">True</property>
+                    <property name="app_paintable">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <child>
@@ -79,7 +84,6 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="padding">10</property>
             <property name="position">0</property>
           </packing>
         </child>

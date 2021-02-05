@@ -10,23 +10,22 @@ namespace NastGlass
         [STAThread]
         public static void Main(string[] args)
         {
-            Application.Init();
-
             var app = new Application("org.NastGlass.NastGlass", GLib.ApplicationFlags.None);
             app.Register(GLib.Cancellable.Current);
             
-            var win = new MainWindow();
-
+            var win = new MainWindow(){Application = app};
+            
             string fileStyle = $"{Directory.GetCurrentDirectory()}/StylesWindows.css";
             LoadCssStyles(fileStyle, win);
             
             var iconPath = $"{Directory.GetCurrentDirectory()}/Icon.ico";
             win.SetIconFromFile(iconPath);
-            
+            app.AddWindow(win);
             win.Show();
-            Application.Run();
+
+            ((GLib.Application) app).Run();
         }
-        
+
         private static void LoadCssStyles(string fileStyle, Window win)
         {
             if (File.Exists(fileStyle))

@@ -1,8 +1,13 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Gdk;
+using GLib;
 using Gtk;
+using Application = Gtk.Application;
+using Process = System.Diagnostics.Process;
 using UI = Gtk.Builder.ObjectAttribute;
+using Window = Gtk.Window;
 
 namespace NastGlass
 {
@@ -31,15 +36,10 @@ namespace NastGlass
             this._closeApplication.Clicked += CloseApplication;
             this._getLink.Clicked += GetLinkClicked;
         }
-        
-        private void HideApplication(object sender, EventArgs e)
-        {     
-            this.Hide();
-        }
 
         private void HideApplication(object sender, EventArgs e) => this.Hide();
         
-        private void CloseApplication(object sender, EventArgs e) => Application.Quit();
+        private void CloseApplication(object sender, EventArgs e) => ((GLib.Application) this.Application).Quit();
 
         private void OpenGitClicked(object sender, EventArgs e)
         {

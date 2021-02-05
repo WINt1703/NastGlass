@@ -15,7 +15,6 @@ namespace NastGlass
         [UI] private Button _openGit = null;
         [UI] private Button _closeApplication = null;
         [UI] private Button _hideApplication = null;
-        [UI] private EventBox _titleBar = null;
         [UI] private TextView _messange = null;
         [UI] private ProgressBar _progressBar = null;
         
@@ -27,19 +26,15 @@ namespace NastGlass
         {
             builder.Autoconnect(this);
             
-            this._titleBar.ButtonPressEvent += MoveWindow;
             this._openGit.Clicked += OpenGitClicked;
             this._hideApplication.Clicked += HideApplication;
             this._closeApplication.Clicked += CloseApplication;
             this._getLink.Clicked += GetLinkClicked;
         }
-
-        private void MoveWindow(object o, ButtonPressEventArgs args)
-        {
-            var eventButton = args.Event;
-            
-            if(eventButton.Button == 1)
-                this.BeginMoveDrag((int)eventButton.Button, (int)eventButton.XRoot, (int)eventButton.YRoot, eventButton.Time);
+        
+        private void HideApplication(object sender, EventArgs e)
+        {     
+            this.Hide();
         }
 
         private void HideApplication(object sender, EventArgs e) => this.Hide();

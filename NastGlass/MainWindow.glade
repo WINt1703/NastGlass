@@ -12,42 +12,18 @@
       <object class="GtkHeaderBar">
         <property name="name">titleBar</property>
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="app_paintable">True</property>
+        <property name="can_focus">True</property>
+        <property name="has_focus">True</property>
+        <property name="is_focus">True</property>
+        <property name="can_default">True</property>
+        <property name="has_default">True</property>
+        <property name="receives_default">True</property>
+        <property name="no_show_all">True</property>
+        <property name="has_tooltip">True</property>
         <property name="title" translatable="yes">NastGlass</property>
         <property name="subtitle" translatable="yes">WeTransfer client</property>
-        <child>
-          <object class="GtkButton" id="_closeApplication">
-            <property name="name">closeApplication</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="margin_top">10</property>
-            <property name="margin_bottom">10</property>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="_hideApplication">
-            <property name="name">hideApplication</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="margin_top">10</property>
-            <property name="margin_bottom">10</property>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
+        <property name="show_close_button">True</property>
       </object>
     </child>
     <child>

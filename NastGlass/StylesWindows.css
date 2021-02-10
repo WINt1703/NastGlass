@@ -82,7 +82,7 @@ button:checked:disabled {
     background-image: none;
 }
 
-#hideApplication
+button.titlebutton.minimize
 {
     border-radius: 100%;
     padding: 0;
@@ -91,21 +91,22 @@ button:checked:disabled {
     background: rgb(67, 66, 79);
 }
 
-#closeApplication
+button.titlebutton.close
 {
     border-radius: 100%;
     min-width: 20px;
     min-height: 20px;
     padding: 0;
+    margin: 0;
     background: rgb(67, 66, 79);
 }
 
-#closeApplication:hover {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 0 0 9999px transparent;
+button.titlebutton.close:hover {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 0 0 9999px transparent;    
     background: rgb(255, 55, 55);
 }
 
-#hideApplication:hover {
+button.titlebutton.minimize:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 0 0 9999px transparent;
     background: rgb(77, 252, 59);
 }

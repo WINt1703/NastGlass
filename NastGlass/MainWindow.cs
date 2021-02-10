@@ -1,10 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Gdk;
-using GLib;
 using Gtk;
-using Application = Gtk.Application;
 using Process = System.Diagnostics.Process;
 using UI = Gtk.Builder.ObjectAttribute;
 using Window = Gtk.Window;
@@ -18,8 +15,6 @@ namespace NastGlass
         [UI] private FileChooserButton _selected = null;
         [UI] private Button _getLink = null;
         [UI] private Button _openGit = null;
-        [UI] private Button _closeApplication = null;
-        [UI] private Button _hideApplication = null;
         [UI] private TextView _messange = null;
         [UI] private ProgressBar _progressBar = null;
         
@@ -32,15 +27,9 @@ namespace NastGlass
             builder.Autoconnect(this);
             
             this._openGit.Clicked += OpenGitClicked;
-            this._hideApplication.Clicked += HideApplication;
-            this._closeApplication.Clicked += CloseApplication;
             this._getLink.Clicked += GetLinkClicked;
         }
-
-        private void HideApplication(object sender, EventArgs e) => this.Hide();
         
-        private void CloseApplication(object sender, EventArgs e) => ((GLib.Application) this.Application).Quit();
-
         private void OpenGitClicked(object sender, EventArgs e)
         {
             var url = "https://github.com/wint1703";
